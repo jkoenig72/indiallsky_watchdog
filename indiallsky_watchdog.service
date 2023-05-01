@@ -1,0 +1,12 @@
+[Unit]
+Description=Indiallsky Watchdog Service
+After=network.target
+
+[Service]
+User=fritz
+WorkingDirectory=/home/fritz/indiallsky_watchdog
+ExecStart=python3 watchdog.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
