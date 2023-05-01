@@ -3,9 +3,12 @@ Description=Indiallsky Watchdog Service
 After=network.target
 
 [Service]
-User=fritz
-WorkingDirectory=/home/fritz/indiallsky_watchdog
-ExecStart=python3 watchdog.py
+User=ubuntu
+WorkingDirectory=/home/ubuntu/indiallsky_watchdog
+ExecStart=/home/ubuntu/indiallsky_watchdog/watchdog.py
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=indiallsky-watchdog
 Restart=always
 
 [Install]
