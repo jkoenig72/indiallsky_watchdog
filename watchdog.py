@@ -12,8 +12,10 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 cmd1= 'systemctl --user restart indi-allsky'
 cmd2= 'systemctl --user restart indiserver'
 
-ct = 60
+ct = 180
 image = '/var/www/html/allsky/images/latest.jpg'
+
+logging.info("Allowed difference in sec.: " + str(ct))
 
 f = os.path.getmtime(image)
 c = calendar.timegm(time.gmtime())
